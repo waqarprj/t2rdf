@@ -1,0 +1,57 @@
+
+root { 
+    display: block;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.footer{
+    text-align: center;
+}
+
+div.green{
+    background-color: #F2FFE1;
+}
+
+div.red{
+    background-color: #F5B3B3;
+}
+
+div.box{
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 5px;
+    font-family: "Trebuchet MS",Arial,sans-serif;
+}
+
+table{
+    border-color:black;
+    border-width:thin;
+    border-style:solid;
+    width: 100%;
+}
+
+tr{
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+.title{
+    background-color: black;
+    color:white;
+}
+
+i{
+    text-align: right;
+}
+
+img{
+    border-radius: 7px;
+    float: left;
+    margin: 5px  
+}
