@@ -67,7 +67,7 @@
             <td >
                 f</td>
             <td >
-                [option] Output format for RDF by default returns RDFa.<br>
+                [optional] Output format for RDF by default returns RDFa.<br>
                 <strong>Example Values:</strong><br />
                 RDF, N3, N-TRIPLE or turtle. 
             </td>
@@ -77,28 +77,28 @@
             <td >
                 n</td>
             <td >
-                [option] Number of tweets per page. 100 is the maximum value for the n</td>
+                [optional] Number of tweets per page. 100 is the maximum value for the n</td>
         </tr>
         
         <tr>
             <td >
                 p</td>
             <td >
-                [option] Page number. 1500 is the maximum value for the p</td>
+                [optional] Page number. 1500 is the maximum value for the p</td>
         </tr>
         
         <tr>
             <td >
                 l</td>
             <td >
-                [option] Returns tweets in specified language only.</td>
+                [optional] Returns tweets in specified language only.</td>
              </tr>
         
         <tr>
             <td >
                 r</td>
             <td >
-                [option] Specifies what type of results to be fetched <br />
+                [optional] Specifies what type of results to be fetched <br />
                 <strong>Example Values:</strong><br />
                 mixed, recent, popular
             </td>
@@ -108,7 +108,7 @@
             <td >
                 g</td>
             <td >
-                [option] returns the tweets within the specified geographical local.<br>
+                [optional] returns the tweets within the specified geographical local.<br>
                 <strong>Example Value:</strong><br />
                 38.781157,-160.398720,3mi
              </td>
