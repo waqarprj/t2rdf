@@ -124,10 +124,10 @@ public class SearchService extends HttpServlet {
         //html header
         out.println("<html>");
         out.println("<head>");
-        out.println("<title>Servlet SearchService</title>");
+        out.println("<title>Results</title>");
         out.println(" <LINK href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">");
         out.println("</head>");
-        out.println("<body>");
+        out.println("<body prefix=\"sioc: http://rdfs.org/sioc/ns#  dcterms: http://purl.org/dc/terms/ sioctypes: http://rdfs.org/sioc/types#\" >");
       
         //get all the subjects
         ResIterator iterator = model.listSubjectsWithProperty(RDF.type, SIOCTypes.MicroblogPost);
@@ -136,7 +136,7 @@ public class SearchService extends HttpServlet {
         while (iterator.hasNext()) {
             Resource resource = iterator.nextResource();
             out.println("<div class=\"box green\">");
-            out.println("<div typeof=\"sioc:Post\" about=\"" + resource.getURI() + "\">");
+            out.println("<div typeof=\"sioctypes:MicroblogPost\" about=\"" + resource.getURI() + "\">");
             out.println("<link rel=\"sioc:has_creater\" href=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getURI() + "\"/>");
             out.println("<div typeof=\"sioc:UserAccount\" about=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getURI() + "\">");
             out.println("<span rel=\"sioc:avatar\"><img src=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getProperty(SIOC.avatar).getLiteral() + "\"></img></span>");
