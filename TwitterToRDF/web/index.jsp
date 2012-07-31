@@ -15,7 +15,7 @@
     
     <body>
         <div class="box green">
-        <h1>TwitterToRDF Service</h1>
+        <h1>TwitterToRDF REST Service</h1>
         <p>
             TwitterToRDF service retrieves all the tweets matching the query for brand name in well-known RDF formats
             <br/><br/>
@@ -27,7 +27,7 @@
             Return results in RDF/XML format
             
         </p>
-                <strong>Test service</strong>
+                <strong>Test the REST service</strong>
         <form action="search" method="get">
             Query : <input type="text" name="q" value="@PEPSI"><br/>
             Output format (RDFa by default): <br/>

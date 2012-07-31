@@ -134,14 +134,18 @@ public class SearchService extends HttpServlet {
       
         //renders all the tweets in HTML 
         while (iterator.hasNext()) {
-            
             Resource resource = iterator.nextResource();
             out.println("<div class=\"box green\">");
             out.println("<div typeof=\"sioc:Post\" about=\"" + resource.getURI() + "\">");
-            out.println("<img src=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getProperty(SIOC.avatar).getLiteral() + "\"></img>");
+            out.println("<link rel=\"sioc:has_creater\" href=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getURI() + "\"/>");
+            out.println("<div typeof=\"sioc:UserAccount\" about=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getURI() + "\">");
+            out.println("<span rel=\"sioc:avatar\"><img src=\"" + resource.getPropertyResourceValue(SIOC.has_creator).getProperty(SIOC.avatar).getLiteral() + "\"></img></span>");
+            out.println("</div>");
+            out.println("<div property=\"sioc:content\" xml:lang=\"" + resource.getProperty(SIOC.content).getLiteral().getLanguage() + "\"><rdf:value>" + resource.getProperty(SIOC.content).getLiteral().getValue() + "</rdf:value></div>");
             out.println("<b>" + resource.getProperty(FOAF.name).getLiteral().getValue() + "</b><br>");
             out.println("<i><span property=\"dcterms:created\">" + resource.getProperty(DCTerms.created).getLiteral().getValue() + "</span></i>");
             out.println("<div property=\"sioc:content\" xml:lang=\"" + resource.getProperty(SIOC.content).getLiteral().getLanguage() + "\"><rdf:value>" + resource.getProperty(SIOC.content).getLiteral().getValue() + "</rdf:value></div>");
+            out.println("<i><span property=\"dcterms:created\">" + resource.getProperty(DCTerms.created).getLiteral().getValue() + "</span></i>");
             out.println("<strong>Links</strong>");
             List<RDFNode> links= GraphUtils.multiValue(resource, SIOC.links_to);
             for(RDFNode link : links)out.println("<br/>&gt <span property=\"dcterms:linksto\">" + link.toString() + "</span>");;
