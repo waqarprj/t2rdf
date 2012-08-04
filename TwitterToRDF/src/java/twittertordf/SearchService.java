@@ -19,6 +19,7 @@ import com.hp.hpl.jena.vocabulary.*;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.net.*;
 import org.w3c.dom.*;
 
 /**
@@ -101,7 +102,7 @@ public class SearchService extends HttpServlet {
     */
     protected String getQuery(HttpServletRequest request) throws Exception{
         String query;
-        if (request.getParameter("q") != null) query = request.getParameter("q");
+        if (request.getParameter("q") != null) query = URLEncoder.encode(request.getParameter("q"),"UTF-8");
         else throw new Exception("q parameter is missing the request");
         if (request.getParameter("n") != null)  query = query + "&rpp=" + request.getParameter("n");
         else query = query + "&rpp=25";
